@@ -1,0 +1,68 @@
+---
+title: "2025-09-08"
+format:
+  html: default
+  pdf: default
+params:
+  course: "mc451"
+  word_min: 250
+  word_max: 300
+  p1: 'Choose either the Nazi medical experiments or the Tuskegee syphilis study and reflect on what that case teaches us about the need for ethical safeguards in research. Why do you think these events had such a lasting impact on how research is conducted today? How might studying these cases shape your behavior as a future researcher?'
+  p2: 'Imagine you are researching a public social media platform like X (formerly Twitter), Reddit, or TikTok. Would you consider the content you’re analyzing to be public or private? Would you need to obtain informed consent? Why or why not? Reflect on the ethical gray areas that emerge in digital research and how you would navigate them.'
+  p3: 'Think ahead to a study you might conduct as part of this course. What would it look like to fully honor the principles of respect for persons, beneficence, and justice in your research? Identify at least one concrete action you would take during your study’s design or data collection to uphold each of these three ethical principles.'
+---
+
+## Choose **one** prompt to answer
+
+
+> **Prompt B:** `r params$p2`
+
+
+---
+
+## Response
+
+<!-- RESPONSE-START -->
+I would consider the content I am analyzing to be public information. Users are broadcasting their thoughts and opinions for everyone to see, so anything that is shared publicly is open to be analyzed by the public. I don’t think informed consent would be necessary in this area. You’re not pulling someone off the street and asking them to take part in an experiment — you’re essentially using data that is already available online. While it may be polite to ask users for permission and or credit them in certain cases, the content is already accessible to everyone. If the information is only being used to calculate a statistic, I don’t think permission or accreditation would be necessary at all, since the focus is on the data rather than the individual. The ethical gray area comes in how the information is used. As stated above, it depends on whether you are using someone as a source or as a percentage. Crediting the user when appropriate shows respect for their content, but direct quoting could risk identifying the user in ways that may be harmful depending on the nature of what was posted. Researchers just need to be mindful about how/how much information they share. The content may be public, but researchers should have a responsibility to avoid causing unnecessary harm to the user. 
+
+<!-- RESPONSE-END -->
+
+---
+
+## Word Count & Range Check
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+get_response_text <- function() {
+  f <- knitr::current_input()
+  if (is.null(f) || !file.exists(f)) return("")
+  x <- readLines(f, warn = FALSE)
+  # Find the lines that EXACTLY match the start/end markers
+  s <- grep("^<!-- RESPONSE-START -->$", x)
+  e <- grep("^<!-- RESPONSE-END -->$", x)
+  if (length(s) != 1 || length(e) != 1 || e <= s) return("")
+  paste(x[(s + 1L):(e - 1L)], collapse = "\n")
+}
+count_words <- function(txt) {
+  # Remove code blocks and inline code before counting
+  txt <- gsub("```[\\s\\S]*?```", " ", txt, perl = TRUE)
+  txt <- gsub("`[^`]*`", " ", txt, perl = TRUE)
+  # Keep letters, numbers, spaces, hyphens, and apostrophes
+  txt <- gsub("[^\\p{L}\\p{N}\\s'-]", " ", txt, perl = TRUE)
+  # Split by whitespace and count non-empty words
+  words <- unlist(strsplit(txt, "\\s+", perl = TRUE))
+  words <- words[nzchar(words)]
+  length(words)
+}
+txt <- get_response_text()
+n <- count_words(txt)
+minw <- as.integer(params$word_min)
+maxw <- as.integer(params$word_max)
+in_range <- n >= minw && n <= maxw
+cat(sprintf("**Word count:** %d  \n", n))
+cat(sprintf("**Required range (%s):** %d–%d words  \n",
+            toupper(params$course), minw, maxw))
+cat(if (in_range) "**Status:** ✅ In range\n" else "**Status:** ❌ Out of range\n")
+```
