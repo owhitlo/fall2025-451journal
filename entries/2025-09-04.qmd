@@ -16,16 +16,12 @@ params:
 
 > **Prompt A:** `r params$p1`
 
-> **Prompt B:** `r params$p2`
-
-> **Prompt C:** `r params$p3`
-
 ---
 
 ## Response
 
 <!-- RESPONSE-START -->
-*Write your answer to **one** of the prompts here. Do not write anything else in this chapter.*
+A media-related issue I find interesting and have considered writing about in the newspaper is how diversity is currently being displayed in movies and shows. Many of times, it feels like filmmakers and showrunners add a “diverse” character to check some sort of box or put them as a side character instead of writing them real, meaningful parts. If I were to research this without any theory, I would probably be collecting a lot of numbers. Such as, the ratio of diversity among casts, how many characters are from such and such backgrounds, but other than that, I am not sure what else can be done. The bigger picture would be what’s missing. How does that representation come across to audiences? Do they feel a certain movie or TV show had meaningful diversity or did it seem forced? Is said person a part of said diverse group? Without theory, there wouldn’t be a way to explain how people respond or the impact of what they are watching. Theory can help ask and explain how authentic representation might change how an audience connects with a piece of media and how stories are told. It can also raise questions like why do some portrayals feel forced, how “token” characters effect the viewing experience and what role does culture or the industry play in shaping the representation we see. Using theory allows for the research to go beyond just counting and instead actually showing the effects of diversity on audiences and storytelling. 
 <!-- RESPONSE-END -->
 
 ---

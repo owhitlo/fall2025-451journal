@@ -16,16 +16,13 @@ params:
 
 > **Prompt A:** `r params$p1`
 
-> **Prompt B:** `r params$p2`
-
-> **Prompt C:** `r params$p3`
-
 ---
 
 ## Response
 
 <!-- RESPONSE-START -->
-*Write your answer to **one** of the prompts here. Do not write anything else in this chapter.*
+I had seen a post online with text stating something along the lines of, "Those who only get 5 hours of sleep a night can risk health problems as they get older." While I didn’t do any further research into the validity of this statement at the time, by using empiricism you could perhaps find observable evidence by using data from people’s sleeping patterns and habits and then tracking those to different health outcomes. This allows you to rely only on factual evidence instead of just taking something at face value. Being objective removes bias from the data, like your own sleep habits and helps ensure that the results reflect what is actually happening rather than your own bias having influence. Determinism can then be used to show that health problems do or do not have identifiable causes, as in this case, consistently getting too little sleep. Control could account for all of the other variables that may have impacts on one’s sleep, like age, diet, stress level or other factors. Then, whether they effect health outcomes and the link between sleep and health issues. For instance, comparing people who average 5 hours of sleep with those who average around 8 hours, all while controlling for these other factors, to see if differences in health outcomes show up. By applying all of these principles, you can make a full, well-rounded study to test whether a claim is true instead of just believing what you see right off the bat.
+
 <!-- RESPONSE-END -->
 
 ---
