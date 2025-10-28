@@ -15,18 +15,14 @@ params:
 ## Choose **one** prompt to answer
 
 > **Prompt A:** `r params$p1`
-
-> **Prompt B:** `r params$p2`
-
-> **Prompt C:** `r params$p3`
-
 ---
 
 ## Response
 
 <!-- RESPONSE-START -->
-*Write your answer to **one** of the prompts here. Do not write anything else in this chapter.*
-<!-- RESPONSE-END -->
+To begin, my research question would be how often influencers use appeals like confidence, self-love or female empowerment to promote products in sponsored posts. I would measure how often this kind of emotionally driven language is used, like phrases that promote positive self-image, and how followers respond. In this scenario, I would be more interested in the latent content because I’d be analyzing the underlying tone of how influencers subtly create an emotional connection to entice followers to purchase what they’re promoting, rather than focusing on surface-level product features in a post.
+
+By doing such an analysis, social media marketing strategies could reveal how product promotion has shifted from simply having a lot of followers and people wanting something because you have it, to focusing more on emotional relatability and connection. Large follower counts don’t hold the same power they once did — followers now value authenticity over popularity. Many influencers market themselves as genuine and almost like a friend, so appeals to empowerment or self-love feel more personal to their followers. Understanding these patterns could help explain how influencers build trust and loyalty while still encouraging consumer behavior, and show how there has been a real shift in what drives people to buy things online.<!-- RESPONSE-END -->
 
 ---
 
