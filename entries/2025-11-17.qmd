@@ -1,0 +1,71 @@
+---
+title: "2025-11-17"
+format:
+  html: default
+  pdf: default
+params:
+  course: "mc451"
+  word_min: 250
+  word_max: 300
+  p1: 'This chapter describes inference as a “leap” from sample to population. Reflect on what makes that leap trustworthy—or risky. Why is it not enough to observe a pattern in your sample? How does hypothesis testing help, and what limits remain even when your results are statistically significant?'
+  p2: 'Many people misunderstand the p-value as “proof.” Why is this incorrect? What does a small p-value tell us—and what does it not tell us? Reflect on a time you saw a research claim or news headline that leaned too heavily on the idea of “significance.” What might have been missing?'
+  p3: 'Imagine you find a statistically significant result in your research—but the effect size is tiny. Would you still report it? Why or why not? How do you balance statistical significance with practical or social importance? What responsibility do researchers have when communicating findings that might be misinterpreted?'
+---
+
+## Choose **one** prompt to answer
+
+> **Prompt A:** `r params$p1`
+
+---
+
+## Response
+
+<!-- RESPONSE-START -->
+
+Inference is described as a “leap” from a sample to a population because you’re looking at a small group of people and are trying to figure out what might be true for a much larger group of people. That leap only works if the sample actually represents the population. If the sample is too small or not balanced, the jump becomes risky. That’s why just noticing a pattern in your sample isn’t enough. A pattern might look authentic, but it may be a coincidence or something unique to that specific group of people.
+
+Hypothesis testing helps because it gives you a way to check whether the pattern you found is likely to be real or just chance. Instead of assuming the difference you see matters, hypothesis testing basically asks, “How likely is it that this result happened by coincidence?” If the answer is “not very likely,” then the result is statistically significant, meaning it might actually say something about the whole population.
+
+Even with significance, there are limits. A significant result doesn’t automatically make your finding meaningful and it doesn’t fix a sample that wasn’t representative in the first place. Tests can still lead you in the wrong direction and sometimes results that look solid won’t hold up when repeated. So, inference is important and useful, but there’s always some uncertainty when you try to make that jump from a small group to an entire population.
+
+<!-- RESPONSE-END -->
+
+---
+
+## Word Count & Range Check
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+get_response_text <- function() {
+  f <- knitr::current_input()
+  if (is.null(f) || !file.exists(f)) return("")
+  x <- readLines(f, warn = FALSE)
+  # Find the lines that EXACTLY match the start/end markers
+  s <- grep("^<!-- RESPONSE-START -->$", x)
+  e <- grep("^<!-- RESPONSE-END -->$", x)
+  if (length(s) != 1 || length(e) != 1 || e <= s) return("")
+  paste(x[(s + 1L):(e - 1L)], collapse = "\n")
+}
+count_words <- function(txt) {
+  # Remove code blocks and inline code before counting
+  txt <- gsub("```[\\s\\S]*?```", " ", txt, perl = TRUE)
+  txt <- gsub("`[^`]*`", " ", txt, perl = TRUE)
+  # Keep letters, numbers, spaces, hyphens, and apostrophes
+  txt <- gsub("[^\\p{L}\\p{N}\\s'-]", " ", txt, perl = TRUE)
+  # Split by whitespace and count non-empty words
+  words <- unlist(strsplit(txt, "\\s+", perl = TRUE))
+  words <- words[nzchar(words)]
+  length(words)
+}
+txt <- get_response_text()
+n <- count_words(txt)
+minw <- as.integer(params$word_min)
+maxw <- as.integer(params$word_max)
+in_range <- n >= minw && n <= maxw
+cat(sprintf("**Word count:** %d  \n", n))
+cat(sprintf("**Required range (%s):** %d–%d words  \n",
+            toupper(params$course), minw, maxw))
+cat(if (in_range) "**Status:** ✅ In range\n" else "**Status:** ❌ Out of range\n")
+```
